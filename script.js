@@ -62,7 +62,7 @@ fillBoard(5);
 function coloreQuadrado(cor) {
   const quadrado = document.querySelectorAll('.pixel');
   for (let index = 0; index < quadrado.length; index += 1) {
-    quadrado[index].addEventListener('click', function oColorimento(event) {
+    quadrado[index].addEventListener('click', (event) => {
       event.target.style.backgroundColor = cor;
     });
   }
@@ -86,7 +86,7 @@ if (corInicial) coloreQuadrado(corInicial);
 // (pelo mouse, ao clicar na cor desejada na paleta de cores):
 
 for (let index = 0; index < palette.length; index += 1) {
-  palette[index].addEventListener('click', function aSelecao(event) {
+  palette[index].addEventListener('click', (event) => {
     const corSelecionada = document.querySelector('.selected');
     if (event.target.className !== 'color selected') {
       event.target.classList.add('selected');
