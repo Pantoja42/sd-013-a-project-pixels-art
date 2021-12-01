@@ -15,6 +15,7 @@ palette[0].style.backgroundColor = 'black';
 palette[1].style.backgroundColor = 'lightgreen';
 palette[2].style.backgroundColor = 'yellow';
 palette[3].style.backgroundColor = 'violet';
+// palette[4].style.backgroundColor = 'white';
 
 // ------------------------------------------------------------
 
@@ -63,7 +64,8 @@ function coloreQuadrado(cor) {
   const quadrado = document.querySelectorAll('.pixel');
   for (let index = 0; index < quadrado.length; index += 1) {
     quadrado[index].addEventListener('click', (event) => {
-      event.target.style.backgroundColor = cor;
+      const quadradoSelecionado = event.target;
+      quadradoSelecionado.style.backgroundColor = cor;
     });
   }
 }
@@ -74,9 +76,12 @@ function coloreQuadrado(cor) {
 
 // Coloca 'black' como cor inicial:
 
-localStorage.setItem('corInicial', palette[0].style.backgroundColor);
-const corInicial = localStorage.getItem('corInicial');
-if (corInicial) coloreQuadrado(corInicial);
+coloreQuadrado(palette[0].style.backgroundColor);
+
+// Outra opção:
+// localStorage.setItem('corInicial', palette[0].style.backgroundColor);
+// const corInicial = localStorage.getItem('corInicial');
+// if (corInicial) coloreQuadrado(corInicial);
 
 // ------------------------------------------------------------
 
